@@ -1,0 +1,25 @@
+    {% extends 'base.html' %}
+    {% block 'content' %}
+    {% load static %}
+    <div class="container">
+        <div class="row">
+                <div class="col">
+                                                 
+                <div class="background-color:#b2b2b2; text-white" style="background-color:#b2b2b2;"> 
+                    <h4>Quienes somos</h4>
+                    <p>
+                        Somos una empresa artesanal productora y comercializadora de flanes de excelente calidad, comprometida en deleitar con cariño y calidez a la comunidad en que nos desenvolvemos. Dedicamos el tiempo  a las necesidades de cada cliente.
+                        En OnlyFlans creamos deliciosos flanes, con exquisitas recetas, sabores de toda la vida o combinaciones originales.
+
+                    </p>
+                    <a href="{% url 'contacto' %}" class="btn btn btn-primary">
+                        Contáctanos
+                    </a>
+                </div>
+                <img src="{% static  'pastelero-o-cocinero.png' %}" alt="logo" class="img-fluid mt-4 mb-4">
+            </div>
+        </div>
+
+    </div>
+    {% endblock %}
+   

@@ -1,0 +1,40 @@
+    {% extends 'base.html' %}
+    {% block 'content' %}
+    <div class="container">
+    
+        <div class="row">
+            <div class="col">
+                <div class="background-color:#b2b2b2; text-white" style="background-color:#b2b2b2;"> 
+                    <h2> Bienvenido {{user.get_username}}</h2>
+                    <p>
+                        Tenemos una lista de productos exclusivos para ti. ¿Quires conocer más?
+                    </p>
+                    <a href="{% url 'contacto' %}" class="btn btn btn-primary">
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4 mb-4">
+            {% for flan in private_flans %}
+            <div class="col-6 col-md-3">
+                <div class="card mb-4" style="">
+                    <img src="{{ flan.image_url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card title">
+                            {{flan.name}}
+                        </h5>
+                        
+                        <p class="card-text">
+                            {{ flan.descripcion }}
+                        </p>
+                        <h6>Precio $ {{ flan.slug }} </h6>
+                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a>-->
+                   </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        
+    </div>
+    {% endblock %}
